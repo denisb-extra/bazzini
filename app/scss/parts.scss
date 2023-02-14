@@ -206,7 +206,7 @@ section {
 #sm_menu_ham {
 	position: static;
 	span {
-		background-color: #fff;
+		background-color: var(--color-main);
 		height: 3px;
 	}
 }
@@ -248,5 +248,5 @@ section {
 .sm_menu_outer {
     bottom: 0;
     height: calc(100vh - 45px);
-    top: 45px;
+    top: 40px;
 }
