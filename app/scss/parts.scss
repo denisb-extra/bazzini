@@ -5,6 +5,9 @@ section {
 	overflow: hidden;
 	position: relative;
 	padding: 75px 0;
+	@media only screen and (max-width : $lw) {
+		padding: 65px 0;
+	}
 	@media only screen and (max-width : $tw) {
 		padding: 55px 0;
 	}
@@ -34,11 +37,15 @@ section {
 		margin-top: 15px;
 	}
 	a {
-		color: #3255F5;
+		color: var(--color-main);
 		text-decoration: underline;
 		&:hover {
 			text-decoration: none;
 		}
+	}
+	h1,h2,h3,h4,h5 {
+		margin-top: 25px;
+		color: var(--color-main);
 	}
 	ul {
 		list-style: disc;
@@ -47,6 +54,10 @@ section {
 
 	img {
 		max-width: 100%;
+	}
+
+	@media only screen and (max-width : $mw) {
+		font-size: 18px;
 	}
 }
 
@@ -85,10 +96,19 @@ section {
 		}
 	}
 }
+.title-regular {
+	@include f-sb;
+	font-size: 32px;
+	color: var(--color-main);
 
+	@media only screen and (max-width : $mw) {
+		font-size: 28px;
+	}
+}
 .section-title {
 	@include f-sb;
 	font-size: 48px;
+	line-height: 1.2;
 	color: var(--color-main);
 
 	position: relative;
@@ -108,12 +128,22 @@ section {
 		margin-bottom: 20px;
 	}
 
-
+	@media only screen and (max-width : $lw) {
+		font-size: 41px;
+		&:after {
+			width: 75px;
+		}
+	}
 	@media only screen and (max-width : $tw) {
-		font-size: 30px;
+		font-size: 35px;
+		&:after {
+			height: 3px;
+			width: 60px;
+			margin-top: 8px;
+		}
 	}
 	@media only screen and (max-width : $mw) {
-		font-size: 25px;
+		font-size: 30px;
 	}
 }
 .section-subtitle {

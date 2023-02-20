@@ -23,6 +23,26 @@ $(document).ready(function ($) {
         }, 1000);
     });
 
+    $(".menu-line .item").on("click", function(){
+		let items = $(this).closest(".menu-line").find(".items");
+		$(".item", items).removeClass("active");
+		$(this).addClass("active");
+	});
+	
+    if($(window).width() <= 950) {
+		$(".menu-line .title-mobile").on("click", function(){
+			let items = $(this).closest(".menu-line").find(".items");
+			items.slideToggle();
+		});
+		$(".menu-line .item").on("click", function(){
+			let items = $(this).closest(".menu-line").find(".items");
+			let titleMobile = $(this).closest(".menu-line").find(".title-mobile");
+			let title = $(this).find("span").text();
+			titleMobile.find("span").text(title);
+			items.slideToggle();
+		});
+	}
+
     document.addEventListener( 'wpcf7mailsent', function( event ) {
         var inputs = event.detail.inputs;
         thankyouPage = getFieldValueByName(inputs, "thankyou-page");
